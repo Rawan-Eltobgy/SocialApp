@@ -6,12 +6,13 @@ import PhoneInput from 'react-native-phone-input';
 
 import {colors} from '../../config/styles';
 
-const PhoneRegistration = () => {
+const PhoneRegistration = ({navigation}) => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [countryCode, setCountryCode] = useState('+20');
   const [focus, setFocus] = useState(false);
   const [errors, setErrors] = useState([]);
   const phoneRef = useRef(undefined);
+
 
   const phoneStyle = focus
     ? styles.focusBorderStyle
@@ -29,7 +30,9 @@ const PhoneRegistration = () => {
 
   return (
     <View paddingH-30 paddingV-20>
-      <Text>Whats your phone number?</Text>
+      <Text black h3>
+        What&apos;s your phone number?
+      </Text>
       <View paddingV-20>
         <PhoneInput
           ref={phoneRef}
@@ -56,11 +59,13 @@ const PhoneRegistration = () => {
         h4Reg
         marginT-40
         bg-primaryColor
-        disabled={phoneNumber ? false : true}
+        // disabled={phoneNumber ? false : true}
         label={'Send Code'}
         style={[styles.sendBtn]}
         onPress={() => {
-          console.log('verify');
+          navigation.navigate('Verification', {
+            phoneNumber: phoneNumber,
+          });
         }}
       />
     </View>

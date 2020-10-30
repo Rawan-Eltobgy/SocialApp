@@ -1,3 +1,4 @@
 import PhoneRegistration from './auth/phoneRegistration';
+import Verification from './auth/verification';
 
-export * from './auth/PhoneRegistration';
+export {PhoneRegistration, Verification};

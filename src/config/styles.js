@@ -1,9 +1,12 @@
 export const colors = {
   primary: '#B50717',
-  secondary: '#131313', // Header background
+  secondary: '#12e7c5', // Header background
+  cyan: '#5ae9f2',
   disabled: '#dadee0',
   white: '#FFFFFF',
   black: '#000000',
+  gray: '#bcbcbc',
+  lightGrey: '#e2e2e2',
   yellow: '#FFBD19',
   white1: '#F8F8F8',
   darkGrey: '#424242',
