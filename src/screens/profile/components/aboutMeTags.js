@@ -2,8 +2,8 @@ import React from 'react';
 import {StyleSheet, FlatList} from 'react-native';
 import {Text, View} from 'react-native-ui-lib';
 
-import helpers from '../../../utils';
-import {colors} from '../../config/styles';
+// import helpers from '../../../utils/helpers';
+import {colors} from '../../../config/styles';
 
 const AboutMeTags = ({tags}) => {
   let loading = false;
@@ -18,15 +18,15 @@ const AboutMeTags = ({tags}) => {
     );
   };
 
-  const _getKey = (item) => {
-    //TODO: add loading
-    return helpers.generateShortId();
-  };
+  // const _getKey = (item) => {
+  //   //TODO: add loading
+  //   return helpers.generateShortId();
+  // };
 
   return (
     <FlatList
       data={loading ? ['', '', ''] : tags}
-      keyExtractor={_getKey}
+      // keyExtractor={_getKey}
       renderItem={_renderItem}
       contentContainerStyle={styles.container}
       style={styles.list}
@@ -46,18 +46,19 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   tag: {
-    backgroundColor: colors.white1,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 15,
     paddingVertical: 5,
-    borderRadius: 10,
+    borderRadius: 20,
+    borderColor: colors.gray,
+    borderWidth: 1,
     marginRight: 10,
     marginBottom: 20,
   },
   tagText:{
-    textShadowColor: colors.lightGrey,
-    color: colors.black,
+    textShadowColor: colors.darkGrey,
+    color: colors.darkGrey,
     fontWeight: 'bold',
   }
 });

@@ -66,22 +66,20 @@ const Verification = ({route, navigation}) => {
       <Button
         h4Reg
         marginT-40
-        bg-primaryColor
+        bg-secondary
         disabled={code ? false : true}
         label={'Verify'}
         style={[styles.sendBtn]}
         onPress={() => {
-          console.log('verify');
-        }}
+        navigation.navigate('Profile', {
+            phoneNumber: phoneNumber,
+          });        }}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  labelStyle: {
-    textDecorationLine: 'underline',
-  },
   titleTxt: {
     fontWeight: 'bold',
     fontSize: 25,

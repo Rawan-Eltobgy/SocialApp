@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {Button, View, Text} from 'react-native-ui-lib';
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import {useNavigation} from 'react-navigation-hooks';
+import {Icon} from 'react-native-elements';
 import PhoneInput from 'react-native-phone-input';
 
 import {colors} from '../../config/styles';
@@ -12,7 +12,6 @@ const PhoneRegistration = ({navigation}) => {
   const [focus, setFocus] = useState(false);
   const [errors, setErrors] = useState([]);
   const phoneRef = useRef(undefined);
-
 
   const phoneStyle = focus
     ? styles.focusBorderStyle
