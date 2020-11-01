@@ -29,9 +29,9 @@ const PhoneRegistration = ({navigation}) => {
 
   return (
     <View paddingH-30 paddingV-20>
-      <Text black h3>
-        What&apos;s your phone number?
-      </Text>
+      <View paddingT-30>
+        <Text style={styles.titleTxt}> What&apos;s your phone number?</Text>
+      </View>
       <View paddingV-20>
         <PhoneInput
           ref={phoneRef}
@@ -42,7 +42,7 @@ const PhoneRegistration = ({navigation}) => {
           initialCountry="eg"
           pickerButtonTextStyle={{fontSize: 20, paddingVertical: 10}}
           onChangePhoneNumber={(value) => {
-            // setCountryCode(phoneRef.current.getCountryCode());
+            setPhoneNumber(value);
           }}
           onSelectCountry={() =>
             setCountryCode(`+${phoneRef.current.getCountryCode()}`)
@@ -58,7 +58,7 @@ const PhoneRegistration = ({navigation}) => {
         h4Reg
         marginT-40
         bg-primaryColor
-        // disabled={phoneNumber ? false : true}
+        disabled={phoneNumber ? false : true}
         label={'Send Code'}
         style={[styles.sendBtn]}
         onPress={() => {
@@ -74,6 +74,12 @@ const PhoneRegistration = ({navigation}) => {
 const styles = StyleSheet.create({
   labelStyle: {
     textDecorationLine: 'underline',
+  },
+  titleTxt: {
+    fontWeight: 'bold',
+    fontSize: 25,
+    color: colors.black,
+    paddingBottom: 10,
   },
   sendBtn: {
     width: '100%',

@@ -34,7 +34,7 @@ const Verification = ({route, navigation}) => {
     <View paddingH-30 paddingV-50>
       <View paddingT-30>
         <Text style={styles.titleTxt}>What&apos;s the verification code</Text>
-        <Text style={styles.subText}>Code sent to +201000000000</Text>
+        <Text style={styles.subText}>{`Code sent to ${phoneNumber}`}</Text>
         <TouchableOpacity>
           <Text style={styles.resendBtn}>Resend Button</Text>
         </TouchableOpacity>

@@ -8,6 +8,9 @@ import AboutMeTags from './components/aboutMeTags';
 
 const Profile = ({route, navigation}) => {
     const [starProfile, setStarProfile] = useState(false);
+    const [starData, setStarData] = useState(false);
+    const [starAboutMe, setStarAboutMe] = useState(false);
+
     let year = 26;
     return (
         <View flex paddingH-20>
@@ -34,10 +37,10 @@ const Profile = ({route, navigation}) => {
                         <View right bottom style={styles.likeContainer}>
                             <Icon
                                 raised
-                                name={starProfile ? "heart" : "hearto"}
+                                name={starData ? "heart" : "hearto"}
                                 type="ant-design"
                                 color={colors.like}
-                                onPress={() => setStarProfile(!starProfile)}
+                                onPress={() => setStarData(!starData)}
                             />
                         </View>
                     </ImageBackground>
@@ -69,16 +72,16 @@ const Profile = ({route, navigation}) => {
                     <View right bottom style={styles.likeContainer}>
                         <Icon
                             raised
-                            name={starProfile ? "heart" : "hearto"}
+                            name={starAboutMe ? "heart" : "hearto"}
                             type="ant-design"
                             color={colors.like}
-                            onPress={() => setStarProfile(!starProfile)}
+                            onPress={() => setStarAboutMe(!starAboutMe)}
                         />
                     </View>
                 </View>
                 <View marginT-10 br50 bg-white>
                     <Text marginH-20 marginT-20 center>About Me </Text>
-                    <View marginH-20>
+                    <View center marginH-20>
                         <AboutMeTags tags={['arr', 'fgfhghg hgh', 'fdfdf']}/>
                     </View>
                     <View right bottom style={styles.likeContainer}>
